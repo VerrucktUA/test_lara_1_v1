@@ -2,12 +2,10 @@
 
 namespace DnsLibrary;
 
-class DnsLibrary
+class DnsLibrary implements DnsLibraryInterface
 {
-    public function getDnsRecords($domain)
+    public function getDnsRecords(string $domain): array
     {
-        $records = dns_get_record($domain, DNS_ANY);
-
-        return $records;
+        return $dnsRecords;
     }
 }
