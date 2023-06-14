@@ -1,5 +1,5 @@
 {
-    "name": "phoenix/dns-library",
+    "name": "verrucktua/dns-library",
     "description": "A PHP library for retrieving DNS records for a specified domain name",
     "type": "library",
     "require": {
