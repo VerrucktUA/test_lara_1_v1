@@ -1,21 +1,21 @@
 <?php
 
-namespace DnsLibrary;
+namespace DnsLibrary\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use DnsLibrary\DnsLibrary;
 
 class DnsLibraryServiceProvider extends ServiceProvider
 {
+    /**
+     * Register services.
+     *
+     * @return void
+     */
     public function register()
     {
-        $this->app->bind(DnsLibraryInterface::class, DnsLibrary::class);
-    }
-
-    public function boot()
-    {
-        // Optional: If you need to publish any configuration files
-        $this->publishes([
-            __DIR__.'/path/to/config/dns-library.php' => config_path('dns-library.php'),
-        ], 'config');
+        $this->app->bind('dnslibrary', function ($app) {
+            return new DnsLibrary();
+        });
     }
 }

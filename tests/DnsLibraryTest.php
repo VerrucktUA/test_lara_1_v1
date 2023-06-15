@@ -17,6 +17,6 @@ class DnsLibraryTest extends TestCase
         $this->assertIsArray($records);
         $this->assertNotEmpty($records);
 
-        print_r($records);
+        var_dump($records);
     }
 }
